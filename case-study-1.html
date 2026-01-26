@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: How Northbound Data helped a Series C fintech company unify metrics across their fragmented BI landscape.">
+  <title>Fintech Case Study | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>Fintech</span>
+            <span>•</span>
+            <span>Analytics Foundation Engagement</span>
+            <span>•</span>
+            <span>12-week engagement</span>
+          </div>
+          <h1 class="article__title">Unifying Metrics Across a Fragmented BI Landscape</h1>
+          <p class="article__subtitle">A Series C payments company had 15 different definitions of "revenue" across their tools. Every meeting started with "which number is right?" We built a single source of truth that restored confidence in their data.</p>
+        </header>
+
+        <!-- Stats Highlight -->
+        <div class="stats fade-in" style="margin-bottom: var(--space-16);">
+          <div class="stat">
+            <div class="stat__value">73%</div>
+            <div class="stat__label">Reduction in metric discrepancies</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">15→1</div>
+            <div class="stat__label">Revenue definitions unified</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">85%</div>
+            <div class="stat__label">dbt test coverage</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">12 wks</div>
+            <div class="stat__label">Total engagement</div>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>The Client</h2>
+          <p>A Series C payments infrastructure company processing over $2B in annual transaction volume. Their data team of 8 supported product, finance, operations, and executive stakeholders across a complex multi-product platform.</p>
+
+          <h2>The Problem</h2>
+          <p>After three years of rapid growth and multiple acquisitions, the company's analytics ecosystem had become a patchwork of conflicting definitions and siloed tools. The symptoms were unmistakable:</p>
+          <ul>
+            <li>Finance reported monthly revenue of $8.2M while the product team showed $7.9M—and both had documentation proving their number was correct</li>
+            <li>Three different Looker dashboards, each with its own "revenue" calculation, were used by different executives</li>
+            <li>The dbt project had grown to 400+ models with minimal testing and documentation</li>
+            <li>Ad-hoc requests took 2-3 weeks because analysts spent more time reconciling numbers than answering questions</li>
+          </ul>
+          <p>The VP of Analytics described the situation: "We'd reached a point where nobody trusted any number until we could trace it back to the source system. That's not sustainable."</p>
+
+          <h2>Our Approach</h2>
+          <h3>Phase 1: Discovery & Assessment (Weeks 1-2)</h3>
+          <p>We started with a comprehensive Analytics Health Assessment to understand the full scope of the problem. This involved:</p>
+          <ul>
+            <li>Inventorying all metric definitions across Looker, Mode, and internal tools</li>
+            <li>Auditing the dbt project structure, test coverage, and documentation</li>
+            <li>Interviewing stakeholders to understand how they used data and where they lost trust</li>
+            <li>Mapping data lineage from source systems through to final dashboards</li>
+          </ul>
+          <p>The assessment revealed the root cause: revenue calculations diverged at the staging layer due to inconsistent handling of refunds, chargebacks, and multi-currency transactions across different product lines.</p>
+
+          <h3>Phase 2: Foundation Rebuild (Weeks 3-10)</h3>
+          <p>Armed with clear diagnosis, we rebuilt the analytics foundation:</p>
+          <ul>
+            <li><strong>Unified staging layer:</strong> Standardized how all transaction types were ingested and categorized</li>
+            <li><strong>Canonical metric definitions:</strong> Created a single, documented definition for each core metric with clear business logic</li>
+            <li><strong>Restructured dbt project:</strong> Organized models into clear layers (staging, intermediate, marts) with consistent naming conventions</li>
+            <li><strong>Comprehensive testing:</strong> Implemented tests for uniqueness, referential integrity, freshness, and business rules</li>
+            <li><strong>Looker cleanup:</strong> Migrated saved queries to governed LookML with a single source of truth for each metric</li>
+          </ul>
+
+          <h3>Phase 3: Enablement & Transition (Weeks 11-12)</h3>
+          <p>We ensured the team could maintain and extend what we built:</p>
+          <ul>
+            <li>Conducted training sessions on the new architecture and best practices</li>
+            <li>Created comprehensive documentation for all metric definitions and business logic</li>
+            <li>Established code review processes and testing requirements for new development</li>
+            <li>Set up monitoring and alerting for data quality issues</li>
+          </ul>
+
+          <h2>The Outcome</h2>
+          <p>Within the first month after go-live:</p>
+          <ul>
+            <li>Metric discrepancy issues dropped by 73%</li>
+            <li>Ad-hoc request turnaround improved from 2-3 weeks to 2-3 days</li>
+            <li>The executive team began using a single revenue dashboard with confidence</li>
+            <li>Finance and Product aligned on numbers for the first time in over a year</li>
+          </ul>
+
+          <blockquote>
+            "We went from spending 60% of our time answering questions about why numbers don't match to having stakeholders who actually trust our data. The ROI was clear within the first month."
+            <footer>— VP of Analytics</footer>
+          </blockquote>
+
+          <p>The company continues with a 20-hour monthly retainer for ongoing development and support as they expand into new product lines.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="case-studies.html" class="btn btn--secondary">← All Case Studies</a>
+          <a href="case-study-2.html" class="btn btn--secondary">Next Case Study →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta fade-in">
+          <div class="cta__content">
+            <h2 class="cta__title">Dealing with metric discrepancies?</h2>
+            <p class="cta__text">Let's talk about your situation. An Analytics Health Assessment can identify exactly where your metrics diverge and what it takes to fix them.</p>
+            <a href="contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

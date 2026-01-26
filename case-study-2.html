@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: How Northbound Data helped a fast-growing e-commerce brand transform their chaotic dbt project into a scalable analytics foundation.">
+  <title>E-commerce Case Study | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>E-commerce</span>
+            <span>•</span>
+            <span>Analytics Foundation Engagement</span>
+            <span>•</span>
+            <span>16-week engagement</span>
+          </div>
+          <h1 class="article__title">From dbt Chaos to Scalable Analytics Foundation</h1>
+          <p class="article__subtitle">A fast-growing DTC brand's dbt project had become unmaintainable—300+ models, zero tests, and only one person who understood how it worked. We rebuilt it from the ground up.</p>
+        </header>
+
+        <!-- Stats Highlight -->
+        <div class="stats fade-in" style="margin-bottom: var(--space-16);">
+          <div class="stat">
+            <div class="stat__value">90%</div>
+            <div class="stat__label">dbt test coverage achieved</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">300→120</div>
+            <div class="stat__label">Models after consolidation</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">6 hrs→45 min</div>
+            <div class="stat__label">Full dbt run time</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">16 wks</div>
+            <div class="stat__label">Total engagement</div>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>The Client</h2>
+          <p>A direct-to-consumer brand in the home goods space with $80M in annual revenue. They'd grown 400% in three years, and their data infrastructure had grown just as fast—but without any structure or governance.</p>
+
+          <h2>The Problem</h2>
+          <p>The company had adopted dbt early, which was the right call. But as they scaled, they added models without any architectural guidance. The result:</p>
+          <ul>
+            <li>300+ models with no clear layering or naming conventions</li>
+            <li>Zero tests—failures were discovered when dashboards broke</li>
+            <li>No documentation—only the original data engineer knew how things worked</li>
+            <li>Full dbt runs took 6+ hours, often timing out</li>
+            <li>Duplicate logic scattered across models, making changes risky</li>
+          </ul>
+          <p>When that data engineer gave notice, the team realized they had a serious problem. The Head of Analytics described it as "trying to understand a codebase written in a language nobody speaks."</p>
+
+          <h2>Our Approach</h2>
+          <h3>Phase 1: Assessment & Archaeology (Weeks 1-3)</h3>
+          <p>Before we could rebuild, we needed to understand what existed. This meant:</p>
+          <ul>
+            <li>Mapping the entire DAG and identifying critical paths</li>
+            <li>Interviewing stakeholders to understand which models actually mattered</li>
+            <li>Profiling data to understand business logic embedded in SQL</li>
+            <li>Identifying duplicate and orphaned models</li>
+          </ul>
+          <p>We discovered that only about 40% of the models were actually used in production reporting. The rest were experiments, one-off analyses, or duplicates that had never been cleaned up.</p>
+
+          <h3>Phase 2: Architecture Design (Weeks 4-5)</h3>
+          <p>We designed a new architecture that would scale with the business:</p>
+          <ul>
+            <li><strong>Clear layer separation:</strong> staging → intermediate → marts</li>
+            <li><strong>Domain-based organization:</strong> models grouped by business domain (orders, customers, products, marketing)</li>
+            <li><strong>Naming conventions:</strong> consistent patterns that make models discoverable</li>
+            <li><strong>Testing strategy:</strong> coverage requirements for each layer</li>
+          </ul>
+
+          <h3>Phase 3: Migration & Rebuild (Weeks 6-14)</h3>
+          <p>We rebuilt the project incrementally, maintaining production stability throughout:</p>
+          <ul>
+            <li>Started with staging layer—clean, tested foundation for all source data</li>
+            <li>Rebuilt core business logic in intermediate models with proper documentation</li>
+            <li>Created focused mart models for each reporting domain</li>
+            <li>Migrated dashboards to use new models, one domain at a time</li>
+            <li>Deprecated and removed unused models after confirming no dependencies</li>
+          </ul>
+
+          <h3>Phase 4: Testing & Documentation (Weeks 12-15)</h3>
+          <p>Running parallel with the rebuild, we implemented comprehensive testing:</p>
+          <ul>
+            <li>Schema tests for all models (uniqueness, not null, relationships)</li>
+            <li>Data tests for business rules (e.g., order totals must equal sum of line items)</li>
+            <li>Freshness checks on all source data</li>
+            <li>Documentation for every model, including business context and ownership</li>
+          </ul>
+
+          <h3>Phase 5: Enablement (Week 16)</h3>
+          <p>We ensured the team could maintain and extend the new architecture:</p>
+          <ul>
+            <li>Training sessions on the new project structure and patterns</li>
+            <li>Code review guidelines and PR templates</li>
+            <li>CI/CD pipeline with automated testing</li>
+            <li>Runbooks for common operations</li>
+          </ul>
+
+          <h2>The Outcome</h2>
+          <p>The transformation was dramatic:</p>
+          <ul>
+            <li>Model count reduced from 300+ to 120 well-organized, documented models</li>
+            <li>Test coverage went from 0% to 90%</li>
+            <li>Full dbt runs dropped from 6+ hours to 45 minutes</li>
+            <li>New team members could onboard and contribute within their first week</li>
+            <li>Dashboard incidents dropped by 80%</li>
+          </ul>
+
+          <blockquote>
+            "Before, our dbt project was this black box that scared everyone. Now our analysts feel confident making changes and our dashboards actually stay up. The peace of mind alone was worth it."
+            <footer>— Head of Analytics</footer>
+          </blockquote>
+
+          <p>The company now maintains a 10-hour monthly retainer for ongoing support and continues to build on the foundation we established.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="case-study-1.html" class="btn btn--secondary">← Previous Case Study</a>
+          <a href="case-study-3.html" class="btn btn--secondary">Next Case Study →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta fade-in">
+          <div class="cta__content">
+            <h2 class="cta__title">Is your dbt project out of control?</h2>
+            <p class="cta__text">You're not alone. Many fast-growing teams end up in this situation. Let's talk about what it would take to get your project back on track.</p>
+            <a href="contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

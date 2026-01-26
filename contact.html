@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Northbound Data to discuss your analytics challenges. Schedule a conversation or reach out directly.">
+  <title>Contact | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-header__content">
+          <h1 class="page-header__title fade-in">Let's Talk</h1>
+          <p class="page-header__subtitle fade-in fade-in-delay-1">Whether you have a specific project in mind or just want to explore options, we're happy to chat. No sales pressure—just an honest conversation about your situation.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contact Options -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--2" style="gap: var(--space-16); align-items: start;">
+          <!-- Contact Form -->
+          <div class="fade-in">
+            <h2 class="mb-8">Send a Message</h2>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="company">Company</label>
+                <input type="text" id="company" name="company" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">How can we help?</label>
+                <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us a bit about your situation—what's working, what's not, and what you're hoping to achieve."></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Other Contact Options -->
+          <div class="fade-in fade-in-delay-1">
+            <h2 class="mb-8">Schedule a Call</h2>
+            <p class="mb-8">Prefer to talk live? Schedule a 30-minute conversation at a time that works for you. We'll discuss your situation and explore whether there's a fit.</p>
+
+            <!-- Calendly Placeholder -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); text-align: center; margin-bottom: var(--space-12);">
+              <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">Calendly scheduling widget</p>
+              <a href="https://calendly.com/northbounddata" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Open Scheduling Page →</a>
+            </div>
+
+            <h2 class="mb-8">Email Directly</h2>
+            <p class="mb-4">If you prefer email, reach out directly:</p>
+            <a href="mailto:you@northbounddata.com" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium);">you@northbounddata.com</a>
+
+            <div style="margin-top: var(--space-16);">
+              <h2 class="mb-8">What to Expect</h2>
+              <ul style="list-style: none; padding: 0;">
+                <li style="display: flex; gap: var(--space-3); margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                  <span style="color: var(--color-teal);">1.</span>
+                  <span><strong style="color: var(--color-text-primary);">Quick response</strong> — We typically respond within one business day.</span>
+                </li>
+                <li style="display: flex; gap: var(--space-3); margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                  <span style="color: var(--color-teal);">2.</span>
+                  <span><strong style="color: var(--color-text-primary);">Initial conversation</strong> — A 30-minute call to understand your situation and goals.</span>
+                </li>
+                <li style="display: flex; gap: var(--space-3); margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                  <span style="color: var(--color-teal);">3.</span>
+                  <span><strong style="color: var(--color-text-primary);">Honest assessment</strong> — We'll tell you if we think we can help—and if not, we'll point you in the right direction.</span>
+                </li>
+                <li style="display: flex; gap: var(--space-3); margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                  <span style="color: var(--color-teal);">4.</span>
+                  <span><strong style="color: var(--color-text-primary);">Proposal if there's fit</strong> — If it makes sense to work together, we'll scope an engagement tailored to your needs.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--bg">
+      <div class="container container--narrow">
+        <div class="section-header section-header--centered fade-in">
+          <h2 class="section-header__title">Common Questions</h2>
+        </div>
+        <div class="fade-in">
+          <div style="margin-bottom: var(--space-8);">
+            <h3 style="margin-bottom: var(--space-3);">Do you work with teams of our size?</h3>
+            <p style="color: var(--color-text-secondary);">We work with data teams ranging from solo practitioners to teams of 30+. The specific engagement we recommend depends on your situation, but we've helped organizations of all sizes.</p>
+          </div>
+          <div style="margin-bottom: var(--space-8);">
+            <h3 style="margin-bottom: var(--space-3);">Do you work remotely?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. All of our engagements are remote-first. We've successfully delivered projects for clients across the US and internationally without ever meeting in person.</p>
+          </div>
+          <div style="margin-bottom: var(--space-8);">
+            <h3 style="margin-bottom: var(--space-3);">What's the typical engagement length?</h3>
+            <p style="color: var(--color-text-secondary);">Assessments run 2-3 weeks. Foundation engagements typically run 10-20 weeks depending on scope. Specialized sprints range from 2-8 weeks. We scope based on your specific needs.</p>
+          </div>
+          <div style="margin-bottom: var(--space-8);">
+            <h3 style="margin-bottom: var(--space-3);">Can we start with something small?</h3>
+            <p style="color: var(--color-text-secondary);">Absolutely. Most clients start with an Analytics Health Assessment. It's a contained engagement that gives you clear value (diagnosis and roadmap) while letting us both evaluate whether a longer engagement makes sense.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom: var(--space-3);">What if we're not ready to commit yet?</h3>
+            <p style="color: var(--color-text-secondary);">That's fine. Our initial conversation is just that—a conversation. We'll discuss your situation, share some thoughts, and you can decide if and when you want to move forward. No pressure, no follow-up spam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
