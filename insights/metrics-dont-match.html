@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why your metrics don't match across departments and tools—and the systematic approach to fixing metric discrepancies.">
+  <title>Why Your Metrics Don't Match (And How to Fix It) | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html" class="active">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>Data Quality</span>
+          </div>
+          <h1 class="article__title">Why Your Metrics Don't Match (And How to Fix It)</h1>
+          <p class="article__subtitle">Marketing says revenue is $10M. Finance says $9.2M. Product says $10.3M. All of them can show you exactly where their number comes from. All of them are frustrated that the others are "wrong." Sound familiar?</p>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>The Uncomfortable Truth</h2>
+          <p>Here's what nobody wants to admit: when metrics don't match, it's rarely because someone made a calculation error. It's because different people are answering different questions and calling the answers by the same name.</p>
+          <p>When Finance says "revenue," they mean recognized revenue according to ASC 606, adjusted for refunds processed by month-end close. When Marketing says "revenue," they mean booked revenue attributed to campaigns at the time of conversion. When Product says "revenue," they mean the transaction amounts flowing through the payment system.</p>
+          <p>All three are valid. All three are measuring something real. They're just not measuring the same thing.</p>
+
+          <h2>The Four Root Causes</h2>
+          <h3>1. Definition Divergence</h3>
+          <p>This is the most common cause. The same metric name gets defined differently across teams, tools, or time. Sometimes it's deliberate—different use cases require different definitions. More often it's accidental—someone builds a new dashboard and defines "revenue" slightly differently, and nobody notices until the numbers don't match.</p>
+          <p>Definition divergence compounds. One slightly different definition becomes the foundation for other metrics, which themselves get used in reports, which themselves get compared to other reports with the original definition.</p>
+
+          <h3>2. Timing Mismatches</h3>
+          <p>Data arrives at different times. Your product database updates in real-time. Your data warehouse refreshes every hour. Your BI tool's extracts update daily. Your spreadsheet was exported last Tuesday.</p>
+          <p>Comparing metrics across systems with different update cadences almost guarantees discrepancies. The numbers aren't wrong—they're just answers to "what was the state at time X?" for different values of X.</p>
+
+          <h3>3. Filter Differences</h3>
+          <p>Same definition, same data, different filters. One report includes test accounts, another excludes them. One shows all transactions, another filters to only completed ones. One includes a specific product line, another includes everything.</p>
+          <p>Filters are often applied inconsistently because they're implicit knowledge. The person who built the report knew to exclude test accounts, but that logic lives in their head (or buried in a WHERE clause nobody reads), not in documented business logic.</p>
+
+          <h3>4. Calculation Context</h3>
+          <p>Even with identical definitions and data, different tools calculate things differently. Time zone handling. Currency conversion. Null value treatment. Rounding. Aggregation order of operations.</p>
+          <p>These differences are often small individually, but they compound. A 0.1% variance in each of ten calculation steps becomes a noticeable discrepancy in the final number.</p>
+
+          <h2>The Fix: A Single Source of Truth</h2>
+          <p>The solution isn't better documentation (though that helps). It's architectural: you need a single, authoritative place where each metric is defined and calculated—and everything else needs to read from that place.</p>
+
+          <h3>Step 1: Metric Inventory</h3>
+          <p>Before you can unify definitions, you need to know what exists. This means surveying every dashboard, report, spreadsheet, and ad-hoc query to find every instance where key metrics are defined.</p>
+          <p>Yes, this is tedious. Yes, it's necessary. You can't fix what you don't understand.</p>
+
+          <h3>Step 2: Business Stakeholder Alignment</h3>
+          <p>With your inventory in hand, bring together the people who own these metrics. Not the data team—the business stakeholders who use these numbers to make decisions.</p>
+          <p>The goal is agreement on canonical definitions. What exactly does "revenue" mean? Which edge cases are included? What time zone? What currency? What granularity?</p>
+          <p>This is where most efforts fail. Teams skip the hard conversations and jump to technical implementation. But if Finance and Marketing don't agree on what "revenue" means, no amount of dbt modeling will help.</p>
+
+          <h3>Step 3: Single Implementation</h3>
+          <p>Once you have agreed-upon definitions, implement them exactly once. In dbt, this usually means a metric model or a mart table that contains the canonical calculation. Every downstream use case reads from this single source.</p>
+          <p>This sounds simple, but it requires discipline. The analyst who "just needs a quick number" and writes their own revenue calculation has just created a new discrepancy waiting to happen.</p>
+
+          <h3>Step 4: Governance and Enforcement</h3>
+          <p>Single implementations only stay single if you maintain them. This means:</p>
+          <ul>
+            <li>Clear ownership of each metric definition</li>
+            <li>A change process for modifying definitions</li>
+            <li>Regular audits to find and eliminate rogue implementations</li>
+            <li>Tooling that makes using the canonical source easier than rolling your own</li>
+          </ul>
+
+          <h2>The Role of a Semantic Layer</h2>
+          <p>A semantic layer takes this architectural approach and makes it enforceable. Instead of hoping that downstream consumers use the right tables and apply the right logic, you give them a layer that only exposes the correct metrics.</p>
+          <p>Tools like dbt Semantic Layer, Looker's LookML, or Cube.js serve this purpose. They're not just about making queries easier—they're about making it impossible (or at least hard) to calculate metrics incorrectly.</p>
+
+          <h2>Why This Is Hard</h2>
+          <p>If the solution were easy, everyone would have done it. The difficulty comes from organizational challenges, not technical ones:</p>
+          <ul>
+            <li>Getting cross-functional agreement on definitions requires political capital</li>
+            <li>Migrating existing reports to new sources breaks workflows people depend on</li>
+            <li>Maintaining discipline around a single source requires ongoing effort</li>
+            <li>The work is mostly invisible—success looks like nothing happening</li>
+          </ul>
+          <p>But the cost of not doing it is real. Every hour spent reconciling metrics is an hour not spent on analysis that drives decisions. Every meeting that devolves into "which number is right?" is a meeting wasted. Every decision made on the wrong number is a decision you wish you could take back.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta fade-in" style="margin-top: var(--space-16);">
+          <div class="cta__content">
+            <h2 class="cta__title">Ready to end the metric debates?</h2>
+            <p class="cta__text">Our Metric Alignment Sprint is designed specifically for this problem. We'll inventory, align, and implement unified metrics so everyone's working from the same numbers.</p>
+            <a href="../contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="dbt-intervention.html" class="btn btn--secondary">← Previous Article</a>
+          <a href="semantic-layer.html" class="btn btn--secondary">Next Article →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../insights.html">Insights</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

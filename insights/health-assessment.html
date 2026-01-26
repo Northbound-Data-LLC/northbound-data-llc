@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What happens during an Analytics Health Assessment with Northbound Data? A detailed look at our process, deliverables, and what you can expect.">
+  <title>What to Expect from an Analytics Health Assessment | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html" class="active">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>Working with Us</span>
+          </div>
+          <h1 class="article__title">What to Expect from an Analytics Health Assessment</h1>
+          <p class="article__subtitle">Thinking about getting an outside perspective on your analytics infrastructure? Here's exactly what happens during an assessment engagement—no surprises, no hidden agendas.</p>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>Why an Assessment?</h2>
+          <p>Most organizations know something is wrong with their analytics infrastructure. What they often don't know is exactly what's wrong, how bad it is, or what to do about it.</p>
+          <p>That's where an assessment comes in. It's a structured diagnostic that gives you a clear, unbiased picture of your current state—and a roadmap for where to go. Think of it as a technical due diligence on your own data infrastructure.</p>
+          <p>We recommend assessments as the starting point for most engagements because good solutions require good diagnosis. Jumping straight to implementation without understanding the problem usually means solving the wrong thing.</p>
+
+          <h2>What We Look At</h2>
+          <p>An assessment examines your analytics ecosystem across several dimensions:</p>
+
+          <h3>dbt Project Health</h3>
+          <p>We review your dbt project structure, looking for:</p>
+          <ul>
+            <li>Architecture and organization — Is there a clear layering strategy? Are models logically organized?</li>
+            <li>Model complexity — Are there overly complex models that should be broken up?</li>
+            <li>Performance — What are run times like? Where are the bottlenecks?</li>
+            <li>Documentation — Can someone new to the project understand what's happening?</li>
+            <li>Testing — What's the test coverage? Are the right things being tested?</li>
+          </ul>
+          <p>We generate a health score that helps you benchmark against best practices and track improvement over time.</p>
+
+          <h3>BI Query Ecosystem</h3>
+          <p>Beyond the transformation layer, we inventory your BI tools:</p>
+          <ul>
+            <li>What saved queries exist across Looker, Mode, Tableau, or other tools?</li>
+            <li>Which are actively used and which are orphaned?</li>
+            <li>Where is business logic implemented that should be in the transformation layer?</li>
+            <li>Are there duplicate or conflicting implementations of the same metrics?</li>
+          </ul>
+
+          <h3>Metric Consistency</h3>
+          <p>We specifically look for metric discrepancies:</p>
+          <ul>
+            <li>How are key metrics defined across different tools and teams?</li>
+            <li>Where do definitions diverge, and why?</li>
+            <li>What's the root cause of reported number mismatches?</li>
+          </ul>
+
+          <h3>Data Quality</h3>
+          <p>We evaluate your data quality posture:</p>
+          <ul>
+            <li>What testing exists? Is it comprehensive?</li>
+            <li>How are data quality issues detected and resolved?</li>
+            <li>What's the time-to-detection for common issues?</li>
+            <li>Do stakeholders trust the data? Why or why not?</li>
+          </ul>
+
+          <h2>The Process</h2>
+          <h3>Week 1: Discovery</h3>
+          <p>We start by getting access and context. This involves:</p>
+          <ul>
+            <li>Read-only access to your data warehouse and dbt project</li>
+            <li>Access to BI tools to inventory queries and dashboards</li>
+            <li>Kickoff meeting to understand your goals, pain points, and priorities</li>
+            <li>Stakeholder interviews with key data consumers (usually 4-6 conversations)</li>
+          </ul>
+          <p>The goal is to understand not just the technical state, but the organizational context. What problems are actually causing pain? What's blocking progress?</p>
+
+          <h3>Week 2: Analysis</h3>
+          <p>This is where the deep work happens. We:</p>
+          <ul>
+            <li>Audit the dbt project systematically</li>
+            <li>Inventory and analyze BI queries</li>
+            <li>Trace metric discrepancies to their source</li>
+            <li>Assess test coverage and data quality practices</li>
+            <li>Document findings and develop recommendations</li>
+          </ul>
+          <p>We're looking for patterns, not just individual issues. Root causes matter more than symptoms.</p>
+
+          <h3>Week 3: Synthesis & Delivery</h3>
+          <p>We synthesize findings into actionable outputs:</p>
+          <ul>
+            <li>Executive summary presentation (for leadership, non-technical)</li>
+            <li>Detailed technical findings report (for the data team)</li>
+            <li>Prioritized remediation roadmap with effort estimates</li>
+            <li>Final readout meeting to walk through findings and answer questions</li>
+          </ul>
+
+          <h2>What You Get</h2>
+          <p>At the end of an assessment, you'll have:</p>
+
+          <h3>Executive Summary</h3>
+          <p>A presentation-ready overview suitable for leadership. It covers the high-level state, key risks, and strategic recommendations without getting into technical weeds.</p>
+
+          <h3>Technical Findings Report</h3>
+          <p>A detailed document covering everything we found, organized by area. Specific issues are documented with context and recommendations. This becomes a reference for your team as they address issues.</p>
+
+          <h3>Prioritized Roadmap</h3>
+          <p>A sequenced plan for remediation, organized into phases. Each phase has clear objectives, deliverables, and effort estimates. You'll know exactly what to do first, second, and third—and roughly what each phase will require.</p>
+
+          <h3>Health Score</h3>
+          <p>A quantified assessment of your dbt project's health across multiple dimensions. This gives you a baseline for measuring improvement and a way to track progress over time.</p>
+
+          <h2>What Happens After</h2>
+          <p>An assessment gives you clarity. What you do with that clarity is up to you. Common paths forward:</p>
+          <ul>
+            <li><strong>Internal remediation</strong> — Your team takes the roadmap and executes it themselves. The assessment provides the diagnosis; you provide the treatment.</li>
+            <li><strong>Foundation engagement</strong> — If the issues are significant and you want expert help, we can move into an implementation engagement to address them.</li>
+            <li><strong>Targeted sprints</strong> — If specific areas need attention (just metric alignment, just testing, etc.), we can scope focused sprints to address them.</li>
+          </ul>
+          <p>There's no pressure to continue with us. Many clients take the assessment findings and run with them independently. Our goal is to give you the information you need to make good decisions—what you do with it is your call.</p>
+
+          <h2>Is This Right for You?</h2>
+          <p>An assessment makes sense if you:</p>
+          <ul>
+            <li>Know something is wrong but aren't sure exactly what</li>
+            <li>Want an unbiased external perspective on your infrastructure</li>
+            <li>Need to build a business case for analytics investment</li>
+            <li>Are a new data leader inheriting an existing setup</li>
+            <li>Want a roadmap before committing to a larger engagement</li>
+          </ul>
+          <p>It's less necessary if you already have a clear diagnosis and just need execution help. In that case, we can skip straight to implementation.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta fade-in" style="margin-top: var(--space-16);">
+          <div class="cta__content">
+            <h2 class="cta__title">Ready to understand your analytics health?</h2>
+            <p class="cta__text">Let's talk about your situation. A quick conversation will help us understand whether an assessment is the right starting point for you.</p>
+            <a href="../contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="semantic-layer.html" class="btn btn--secondary">← Previous Article</a>
+          <a href="../insights.html" class="btn btn--secondary">All Insights →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../insights.html">Insights</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: How Northbound Data helped a B2B SaaS startup build their analytics infrastructure from scratch the right way.">
+  <title>B2B SaaS Case Study | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>B2B SaaS</span>
+            <span>•</span>
+            <span>dbt Greenfield Build</span>
+            <span>•</span>
+            <span>10-week engagement</span>
+          </div>
+          <h1 class="article__title">Building Analytics from Scratch the Right Way</h1>
+          <p class="article__subtitle">A post-Series A startup needed to build their data infrastructure from zero. We designed and implemented a complete dbt project that scaled with them through Series B and beyond.</p>
+        </header>
+
+        <!-- Stats Highlight -->
+        <div class="stats fade-in" style="margin-bottom: var(--space-16);">
+          <div class="stat">
+            <div class="stat__value">4x</div>
+            <div class="stat__label">Faster ad-hoc queries</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">0→60</div>
+            <div class="stat__label">Production models built</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">100%</div>
+            <div class="stat__label">Test coverage from day one</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">10 wks</div>
+            <div class="stat__label">Total engagement</div>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>The Client</h2>
+          <p>A B2B SaaS company in the HR tech space, post-Series A with $8M in ARR and growing fast. They had product-market fit and needed to instrument their business for scale—but had zero data infrastructure beyond basic product analytics.</p>
+
+          <h2>The Problem</h2>
+          <p>The company had reached the point where spreadsheets and manual reporting weren't cutting it. The CFO needed reliable metrics for board meetings. The product team needed usage analytics. Sales needed pipeline and conversion data. Everyone was asking the same question: "Where do we get good data?"</p>
+          <p>They had the raw ingredients:</p>
+          <ul>
+            <li>Postgres production database with all their product data</li>
+            <li>Salesforce for CRM</li>
+            <li>Stripe for billing</li>
+            <li>A newly provisioned Snowflake account</li>
+            <li>A new data engineer, fresh from bootcamp, excited but inexperienced</li>
+          </ul>
+          <p>What they didn't have was any idea how to put it all together. They'd seen dbt mentioned everywhere and knew they should use it, but didn't know where to start. The VP of Operations put it simply: "We don't want to end up like our last company, where the data was a disaster. We want to do this right from the beginning."</p>
+
+          <h2>Our Approach</h2>
+          <h3>Phase 1: Discovery & Design (Weeks 1-2)</h3>
+          <p>We started by understanding what the business actually needed to know:</p>
+          <ul>
+            <li>Workshops with stakeholders across Finance, Product, Sales, and Customer Success</li>
+            <li>Identified the 20-30 core metrics that would drive the business</li>
+            <li>Mapped data sources and evaluated ingestion options</li>
+            <li>Designed the overall architecture and project structure</li>
+          </ul>
+          <p>This upfront investment paid off. By understanding the business context first, we could design models that actually matched how people thought about the business—not just how the data happened to be structured in source systems.</p>
+
+          <h3>Phase 2: Foundation Build (Weeks 3-7)</h3>
+          <p>We built the core infrastructure layer by layer:</p>
+          <ul>
+            <li><strong>Data ingestion:</strong> Set up Fivetran connectors for Postgres, Salesforce, and Stripe</li>
+            <li><strong>Staging layer:</strong> Clean, tested models for all source tables with consistent naming and typing</li>
+            <li><strong>Intermediate layer:</strong> Business logic for complex joins and transformations</li>
+            <li><strong>Mart layer:</strong> Final models organized by domain (customers, subscriptions, usage, pipeline)</li>
+          </ul>
+          <p>Every model included tests and documentation from the start. We weren't going to let technical debt accumulate from day one.</p>
+
+          <h3>Phase 3: Metrics & Dashboards (Weeks 6-9)</h3>
+          <p>With the foundation in place, we built out the reporting layer:</p>
+          <ul>
+            <li>Implemented key SaaS metrics: MRR, ARR, churn, LTV, CAC, NDR</li>
+            <li>Built cohort analysis capabilities for customer retention</li>
+            <li>Created product usage models for feature adoption tracking</li>
+            <li>Connected everything to Metabase for self-service exploration</li>
+            <li>Built an executive dashboard with the metrics that mattered for board meetings</li>
+          </ul>
+
+          <h3>Phase 4: Enablement & Handoff (Weeks 8-10)</h3>
+          <p>The most important part: making sure the team could own it going forward.</p>
+          <ul>
+            <li>Paired extensively with the new data engineer on patterns and practices</li>
+            <li>Created comprehensive documentation and a contribution guide</li>
+            <li>Set up CI/CD with automated testing on every PR</li>
+            <li>Established code review workflows and quality standards</li>
+            <li>Built runbooks for common operations and troubleshooting</li>
+          </ul>
+
+          <h2>The Outcome</h2>
+          <p>The company launched their board meeting with confidence for the first time:</p>
+          <ul>
+            <li>60 production models covering all key business domains</li>
+            <li>100% test coverage from day one—no data quality surprises</li>
+            <li>Ad-hoc questions that used to take days now answered in hours</li>
+            <li>Self-service analytics available for the first time</li>
+            <li>A junior data engineer who could confidently extend the project</li>
+          </ul>
+
+          <blockquote>
+            "We went into our Series B board meetings with actual data for the first time. Not spreadsheets someone pulled together at midnight—real, trustworthy metrics that we could drill into. The investors noticed."
+            <footer>— VP of Operations</footer>
+          </blockquote>
+
+          <p>18 months later, the company has grown the project to 150+ models, hired two more analysts, and still maintains the patterns and standards we established. They continue with a 10-hour monthly retainer for architecture guidance as they scale.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="case-study-2.html" class="btn btn--secondary">← Previous Case Study</a>
+          <a href="case-studies.html" class="btn btn--secondary">All Case Studies →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta fade-in">
+          <div class="cta__content">
+            <h2 class="cta__title">Starting your data journey?</h2>
+            <p class="cta__text">The decisions you make now will shape your analytics for years. Let's talk about building it right from the start.</p>
+            <a href="contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

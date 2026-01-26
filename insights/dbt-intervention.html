@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="5 warning signs that your dbt project has become unmaintainable and what to do about it. Practical advice from Northbound Data.">
+  <title>5 Signs Your dbt Project Needs an Intervention | Northbound Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="../index.html" class="nav__logo">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Northbound Data
+      </a>
+      <ul class="nav__links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html" class="active">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <ul class="nav__mobile-links">
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../insights.html">Insights</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="article">
+      <div class="container container--article">
+        <!-- Article Header -->
+        <header class="article__header fade-in">
+          <div class="article__meta">
+            <span>dbt Best Practices</span>
+          </div>
+          <h1 class="article__title">5 Signs Your dbt Project Needs an Intervention</h1>
+          <p class="article__subtitle">Most dbt projects start with good intentions. A few staging models, some clean transformations, maybe even a test or two. Then reality happens. Here are the warning signs that yours has crossed the line from "could use some cleanup" to "needs serious help."</p>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article__content fade-in">
+          <h2>1. Only One Person Understands How It Works</h2>
+          <p>This is the most dangerous sign, and it's incredibly common. One person—usually whoever built the initial project—holds all the knowledge of how things work. They know why that one model has a weird join. They know which tests are actually important and which are noise. They know which models are used and which are abandoned experiments.</p>
+          <p>When that person goes on vacation, everyone holds their breath. When they leave the company, panic ensues.</p>
+          <p>The fix isn't just documentation (though that helps). It's building a project that's understandable by design: clear naming conventions, consistent patterns, and logic that's straightforward enough that a new team member can trace it without a guide.</p>
+
+          <h2>2. dbt Runs Take Hours</h2>
+          <p>If your full dbt run takes more than 30 minutes, something is wrong. If it takes hours, something is very wrong.</p>
+          <p>Long run times usually indicate one or more of these issues:</p>
+          <ul>
+            <li><strong>Excessive full table scans</strong> — Models that could be incremental aren't</li>
+            <li><strong>Inefficient model dependencies</strong> — The DAG has unnecessary dependencies causing serialization</li>
+            <li><strong>Duplicate work</strong> — The same transformations happening in multiple places</li>
+            <li><strong>Overly complex models</strong> — Logic that should be split across layers is all crammed into one massive SQL file</li>
+          </ul>
+          <p>Beyond the obvious cost implications (compute isn't free), long run times slow down development. When developers can't iterate quickly, they stop iterating at all.</p>
+
+          <h2>3. Tests Are Failing and Nobody Cares</h2>
+          <p>Test failures should cause concern. If your Slack channel has test failure alerts that everyone ignores, you don't have a testing problem—you have a cultural problem that started as a technical one.</p>
+          <p>This usually happens because:</p>
+          <ul>
+            <li>Tests were added without understanding what they actually validate</li>
+            <li>Tests are too sensitive (alerting on acceptable data variance)</li>
+            <li>There are so many failures that they've become noise</li>
+            <li>Nobody knows how to fix the underlying issues</li>
+          </ul>
+          <p>The solution involves triaging: which tests actually matter? What should their thresholds be? And critically—fixing the issues that tests surface, not just the tests themselves.</p>
+
+          <h2>4. You Have Models That Nobody Uses</h2>
+          <p>Every dbt project accumulates cruft. An analyst builds a model for a one-off analysis, then moves on. Someone experiments with a new approach and abandons it. A stakeholder requests something, priorities change, and the model is never connected to anything.</p>
+          <p>A few orphan models are normal. Dozens are a problem. They slow down runs, confuse new team members, and make the project harder to navigate.</p>
+          <p>The dangerous version of this is models that look important but aren't—they have downstream dependencies that themselves are unused. Tracing true usage requires more than just looking at the DAG; it requires understanding what actually powers decisions.</p>
+
+          <h2>5. Every Change Feels Risky</h2>
+          <p>This is the meta-sign that encompasses all the others. When your team hesitates to modify models because "something might break," your project has lost its purpose. dbt exists to make transformation manageable, not terrifying.</p>
+          <p>The fear usually comes from:</p>
+          <ul>
+            <li>Lack of test coverage—no confidence that changes are safe</li>
+            <li>Unclear dependencies—not knowing what downstream will be affected</li>
+            <li>Missing documentation—not understanding what the code is supposed to do</li>
+            <li>Past trauma—previous changes caused incidents</li>
+          </ul>
+          <p>A healthy dbt project should feel safe to change. Not recklessly—you should still test, review, and deploy carefully—but the mechanics of making changes should be straightforward and predictable.</p>
+
+          <h2>What To Do About It</h2>
+          <p>If you recognized your project in these signs, the path forward depends on severity.</p>
+          <p><strong>If it's one or two issues:</strong> You might be able to address them incrementally. Block out time for tech debt, establish new patterns, and migrate towards them over time.</p>
+          <p><strong>If it's all five:</strong> Incremental improvement is likely too slow. The project has accumulated so much entropy that you're better off with a structured rebuild. That doesn't mean throwing everything away—it means systematically redesigning the architecture while migrating the valuable logic.</p>
+          <p>The worst approach? Doing nothing and hoping it gets better. It won't. Technical debt compounds. The longer you wait, the harder the fix.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta fade-in" style="margin-top: var(--space-16);">
+          <div class="cta__content">
+            <h2 class="cta__title">Recognize your project in this list?</h2>
+            <p class="cta__text">We've helped dozens of teams dig out of dbt chaos. Let's talk about what it would take to get your project healthy again.</p>
+            <a href="../contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 fade-in" style="display: flex; justify-content: space-between; padding-top: var(--space-8); border-top: 1px solid var(--color-border);">
+          <a href="../insights.html" class="btn btn--secondary">← All Insights</a>
+          <a href="metrics-dont-match.html" class="btn btn--secondary">Next Article →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">Northbound Data</div>
+          <p class="footer__tagline">Analytics infrastructure that works. dbt, data quality, and BI ecosystem optimization for data teams that care about getting it right.</p>
+        </div>
+        <div class="footer__section">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="../case-studies.html">Case Studies</a></li>
+            <li><a href="../insights.html">Insights</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Connect</h4>
+          <ul class="footer__links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="mailto:you@northbounddata.com">you@northbounddata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Northbound Data, LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scripts.js"></script>
+</body>
+</html>
