@@ -1,14 +1,31 @@
-# Content Design Audit & Remediation — Implementation Plan
+# Production-Ready Website Upgrade — Todo
 
-## Tasks
+## Phase 1: Global Infrastructure
 
-- [ ] 1. Fix placeholder content in about.html (replace `[Your Name]`) and contact.html (add TODO comments for Formspree, Calendly, email)
-- [ ] 2. Add OpenGraph meta tags + theme-color to all 15 pages
-- [ ] 3. Broaden audience framing for finance & operations leaders (index, services, specialized, case-study-1, case-study-3)
-- [ ] 4. Add social proof elements (trust bar on index, testimonials on services/specialized/retainers)
-- [ ] 5. Draft case study enhancements (Key Challenge + ROI sections for all 3 case studies)
-- [ ] 6. SEO improvements (insights.html title, meta descriptions, inline cross-links in insight articles)
-- [ ] 7. Add services sub-navigation dropdown to nav on all 15 pages
-- [ ] 8. Add custom 404.html page
-- [ ] 9. Clean up repo (remove completed_tasks.md and DOCUMENTATION.md)
-- [ ] 10. Final verification pass
+- [x] 1.1 — Update copyright year `&copy; 2024` → `&copy; 2025` in all 16 HTML files
+- [x] 1.2 — Add Lucide Icons CDN `<script>` to `<head>` of all 16 HTML files + `lucide.createIcons()` call after `scripts.js` (use `../` paths for insight article pages)
+- [x] 1.3a — Replace 7 inline SVGs in `index.html` with Lucide `<i>` tags (4 warning icons + 3 service icons)
+- [x] 1.3b — Replace 6 inline SVGs in `specialized.html` with Lucide `<i>` tags
+- [x] 1.3c — Add CSS sizing rule for Lucide icons inside `.card__icon` and `.problem__icon`
+
+## Phase 2: CSS & JS Enhancements
+
+- [x] 2.1 — Add `initNavShadow()` to `scripts.js` + `.nav--scrolled` CSS rule
+- [x] 2.2 — Add enhanced card hover effects (`translateY(-2px)` + shadow) for `.card`, `.service-card`, `.tier`
+- [x] 2.3 — Add process timeline connector line at desktop breakpoint (CSS `::before` pseudo-element)
+
+## Phase 3: Homepage New Sections
+
+- [x] 3.1 — Add technology trust bar between hero and stats (dbt, Snowflake, Looker, BigQuery, Fivetran, Databricks) + CSS
+- [x] 3.2 — Add animated stat counter JS (`initStatCounters()`) + `data-target`/`data-suffix` attributes on `.stat__value` elements
+- [x] 3.3 — Add "Why Northbound Data" section after Services Overview, before How We Work (3-card grid with Lucide icons)
+
+## Phase 4: Stock Photography
+
+- [x] 4.1 — Download 5 Unsplash stock photos to `/images/`
+- [x] 4.2 — Add hero background image CSS (semi-transparent white gradient over photo)
+- [x] 4.3 — Add imagery to case study cards (img elements + CSS opacity styling)
+
+## Verification
+
+- [x] Confirm all changes render correctly
