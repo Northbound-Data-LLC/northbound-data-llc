@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Why your metrics don't match across departments and tools—and the systematic approach to fixing metric discrepancies.">
   <title>Why Your Metrics Don't Match (And How to Fix It) | Northbound Data</title>
+  <meta property="og:title" content="Why Your Metrics Don't Match (And How to Fix It) | Northbound Data">
+  <meta property="og:description" content="Why your metrics don't match across departments and tools—and the systematic approach to fixing metric discrepancies.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/insights/metrics-dont-match.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="../services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="../services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="../services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="../specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="../retainers.html">Retainers</a></li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -84,7 +98,7 @@
           <p>The solution isn't better documentation (though that helps). It's architectural: you need a single, authoritative place where each metric is defined and calculated—and everything else needs to read from that place.</p>
 
           <h3>Step 1: Metric Inventory</h3>
-          <p>Before you can unify definitions, you need to know what exists. This means surveying every dashboard, report, spreadsheet, and ad-hoc query to find every instance where key metrics are defined.</p>
+          <p>Before you can unify definitions, you need to know what exists. This means surveying every dashboard, report, spreadsheet, and ad-hoc query to find every instance where key metrics are defined. (This is exactly what our <a href="../specialized.html">Metric Alignment Sprint</a> covers.)</p>
           <p>Yes, this is tedious. Yes, it's necessary. You can't fix what you don't understand.</p>
 
           <h3>Step 2: Business Stakeholder Alignment</h3>
@@ -106,7 +120,7 @@
           </ul>
 
           <h2>The Role of a Semantic Layer</h2>
-          <p>A semantic layer takes this architectural approach and makes it enforceable. Instead of hoping that downstream consumers use the right tables and apply the right logic, you give them a layer that only exposes the correct metrics.</p>
+          <p>A <a href="../specialized.html">semantic layer</a> takes this architectural approach and makes it enforceable. Instead of hoping that downstream consumers use the right tables and apply the right logic, you give them a layer that only exposes the correct metrics.</p>
           <p>Tools like dbt Semantic Layer, Looker's LookML, or Cube.js serve this purpose. They're not just about making queries easier—they're about making it impossible (or at least hard) to calculate metrics incorrectly.</p>
 
           <h2>Why This Is Hard</h2>

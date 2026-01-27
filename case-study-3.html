@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case study: How Northbound Data helped a B2B SaaS startup build their analytics infrastructure from scratch the right way.">
   <title>B2B SaaS Case Study | Northbound Data</title>
+  <meta property="og:title" content="B2B SaaS Case Study | Northbound Data">
+  <meta property="og:description" content="How Northbound Data helped a B2B SaaS startup build their analytics infrastructure from scratch the right way.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/case-study-3.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html" class="active">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -86,7 +100,7 @@
           <p>A B2B SaaS company in the HR tech space, post-Series A with $8M in ARR and growing fast. They had product-market fit and needed to instrument their business for scale—but had zero data infrastructure beyond basic product analytics.</p>
 
           <h2>The Problem</h2>
-          <p>The company had reached the point where spreadsheets and manual reporting weren't cutting it. The CFO needed reliable metrics for board meetings. The product team needed usage analytics. Sales needed pipeline and conversion data. Everyone was asking the same question: "Where do we get good data?"</p>
+          <p>The company had reached the point where spreadsheets and manual reporting weren't cutting it. The CFO needed reliable metrics for board meetings and investor updates. The VP of Operations needed pipeline and capacity data to plan hiring. The product team needed usage analytics. Everyone was asking the same question: "Where do we get good data?"</p>
           <p>They had the raw ingredients:</p>
           <ul>
             <li>Postgres production database with all their product data</li>
@@ -138,6 +152,9 @@
             <li>Built runbooks for common operations and troubleshooting</li>
           </ul>
 
+          <h2>Key Challenge</h2>
+          <p>The trickiest part was defining metrics for a business still figuring itself out. SaaS metrics like NDR and churn seem straightforward until you hit edge cases: what counts as a "customer" when you have free trials, pilot programs, and enterprise contracts with different billing cadences? We built the metric layer with explicit handling of these edge cases and documented every decision, so the team could revisit definitions as the business model evolved without rebuilding from scratch.</p>
+
           <h2>The Outcome</h2>
           <p>The company launched their board meeting with confidence for the first time:</p>
           <ul>
@@ -153,6 +170,7 @@
             <footer>— VP of Operations</footer>
           </blockquote>
 
+          <p>The VP of Operations estimated the engagement paid for itself within two months through eliminated manual reporting time and the ability to confidently present metrics to investors during their Series B process.</p>
           <p>18 months later, the company has grown the project to 150+ models, hired two more analysts, and still maintains the patterns and standards we established. They continue with a 10-hour monthly retainer for architecture guidance as they scale.</p>
         </div>
 

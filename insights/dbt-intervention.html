@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="5 warning signs that your dbt project has become unmaintainable and what to do about it. Practical advice from Northbound Data.">
   <title>5 Signs Your dbt Project Needs an Intervention | Northbound Data</title>
+  <meta property="og:title" content="5 Signs Your dbt Project Needs an Intervention | Northbound Data">
+  <meta property="og:description" content="5 warning signs that your dbt project has become unmaintainable and what to do about it. Practical advice from Northbound Data.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/insights/dbt-intervention.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="../services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="../services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="../services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="../specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="../retainers.html">Retainers</a></li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -83,7 +97,7 @@
             <li>There are so many failures that they've become noise</li>
             <li>Nobody knows how to fix the underlying issues</li>
           </ul>
-          <p>The solution involves triaging: which tests actually matter? What should their thresholds be? And critically—fixing the issues that tests surface, not just the tests themselves.</p>
+          <p>The solution involves triaging: which tests actually matter? What should their thresholds be? And critically—fixing the issues that tests surface, not just the tests themselves. A <a href="../specialized.html">data quality and testing overhaul</a> can systematically address this.</p>
 
           <h2>4. You Have Models That Nobody Uses</h2>
           <p>Every dbt project accumulates cruft. An analyst builds a model for a one-off analysis, then moves on. Someone experiments with a new approach and abandons it. A stakeholder requests something, priorities change, and the model is never connected to anything.</p>
@@ -104,7 +118,7 @@
           <h2>What To Do About It</h2>
           <p>If you recognized your project in these signs, the path forward depends on severity.</p>
           <p><strong>If it's one or two issues:</strong> You might be able to address them incrementally. Block out time for tech debt, establish new patterns, and migrate towards them over time.</p>
-          <p><strong>If it's all five:</strong> Incremental improvement is likely too slow. The project has accumulated so much entropy that you're better off with a structured rebuild. That doesn't mean throwing everything away—it means systematically redesigning the architecture while migrating the valuable logic.</p>
+          <p><strong>If it's all five:</strong> Incremental improvement is likely too slow. The project has accumulated so much entropy that you're better off with a <a href="../services.html">structured rebuild</a>. That doesn't mean throwing everything away—it means systematically redesigning the architecture while migrating the valuable logic.</p>
           <p>The worst approach? Doing nothing and hoping it gets better. It won't. Technical debt compounds. The longer you wait, the harder the fix.</p>
         </div>
 

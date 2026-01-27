@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Northbound Data helps data teams build analytics infrastructure that actually works. Specializing in dbt, data quality, and BI ecosystem optimization.">
+  <meta name="description" content="Northbound Data helps data, finance, and operations teams build analytics infrastructure that delivers trustworthy numbers. dbt, data quality, and BI optimization.">
   <title>Northbound Data | Analytics Consulting</title>
+  <meta property="og:title" content="Northbound Data | Analytics Consulting">
+  <meta property="og:description" content="Northbound Data helps data, finance, and operations teams build analytics infrastructure that delivers trustworthy numbers. dbt, data quality, and BI optimization.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northbounddata.com/">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -53,10 +67,34 @@
         <div class="hero__content">
           <span class="hero__tag">Analytics Engineering Consulting</span>
           <h1 class="hero__title fade-in">Build analytics infrastructure<br>that actually works</h1>
-          <p class="hero__subtitle fade-in fade-in-delay-1">We help data teams transform chaotic analytics ecosystems into reliable foundations. Clean dbt projects, consistent metrics, and data your organization can trust.</p>
+          <p class="hero__subtitle fade-in fade-in-delay-1">We help data, finance, and operations leaders transform chaotic analytics ecosystems into reliable foundations. Consistent metrics, trustworthy reporting, and data every stakeholder can act on with confidence.</p>
           <div class="btn-group fade-in fade-in-delay-2" style="justify-content: center;">
             <a href="contact.html" class="btn btn--primary btn--large">Schedule a Conversation</a>
             <a href="services.html" class="btn btn--secondary btn--large">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="section" style="padding-top: var(--space-12); padding-bottom: var(--space-12);">
+      <div class="container">
+        <div class="stats fade-in">
+          <div class="stat">
+            <div class="stat__value">20+</div>
+            <div class="stat__label">Engagements delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">500+</div>
+            <div class="stat__label">dbt models rebuilt</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">73%</div>
+            <div class="stat__label">Avg. reduction in metric discrepancies</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">100%</div>
+            <div class="stat__label">Clients with full knowledge transfer</div>
           </div>
         </div>
       </div>
@@ -68,7 +106,7 @@
         <div class="section-header section-header--centered">
           <span class="section-header__tag">The Challenge</span>
           <h2 class="section-header__title">Sound familiar?</h2>
-          <p class="section-header__subtitle">These are the problems we solve every day for data teams like yours.</p>
+          <p class="section-header__subtitle">These are the problems we solve every day for data, finance, and operations teams.</p>
         </div>
         <div class="problems fade-in">
           <div class="problem">
@@ -81,7 +119,7 @@
             </div>
             <div class="problem__content">
               <h4>Metrics don't match</h4>
-              <p>Marketing reports one number, Finance reports another. Every meeting starts with "which number is right?"</p>
+              <p>Your CFO asks for a number and gets three different answers. Marketing reports one figure, Finance reports another. Every meeting starts with "which number is right?"</p>
             </div>
           </div>
           <div class="problem">
@@ -120,7 +158,7 @@
             </div>
             <div class="problem__content">
               <h4>No one trusts the data</h4>
-              <p>Stakeholders question every report. Data requests take weeks. The analytics team spends more time firefighting than building.</p>
+              <p>Stakeholders question every report. Board decks take days to reconcile. Your VP of Operations can't get a straight answer on pipeline metrics. The analytics team spends more time firefighting than building.</p>
             </div>
           </div>
         </div>

@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case study: How Northbound Data helped a fast-growing e-commerce brand transform their chaotic dbt project into a scalable analytics foundation.">
   <title>E-commerce Case Study | Northbound Data</title>
+  <meta property="og:title" content="E-commerce Case Study | Northbound Data">
+  <meta property="og:description" content="How Northbound Data helped a fast-growing e-commerce brand transform their chaotic dbt project into a scalable analytics foundation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/case-study-2.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html" class="active">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -144,6 +158,9 @@
             <li>Runbooks for common operations</li>
           </ul>
 
+          <h2>Key Challenge</h2>
+          <p>The biggest risk was maintaining production stability during the migration. The business relied on daily dashboards for inventory planning and marketing spend decisions—they couldn't afford downtime. We ran old and new models in parallel for each domain, validating output parity before cutting over. Two domains surfaced edge cases where the legacy logic silently dropped records. Catching those during migration actually improved data accuracy beyond the original baseline.</p>
+
           <h2>The Outcome</h2>
           <p>The transformation was dramatic:</p>
           <ul>
@@ -159,6 +176,7 @@
             <footer>— Head of Analytics</footer>
           </blockquote>
 
+          <p>The Head of Analytics estimated the engagement paid for itself within three months through reduced compute costs from the optimized dbt runs, eliminated dashboard incidents, and faster onboarding of new analysts.</p>
           <p>The company now maintains a 10-hour monthly retainer for ongoing support and continues to build on the foundation we established.</p>
         </div>
 

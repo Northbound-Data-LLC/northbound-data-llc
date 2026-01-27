@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About Northbound Data. Learn about our philosophy on analytics, our approach to consulting, and the platforms we work with.">
   <title>About | Northbound Data</title>
+  <meta property="og:title" content="About | Northbound Data">
+  <meta property="og:description" content="About Northbound Data. Learn about our philosophy on analytics, our approach to consulting, and the platforms we work with.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northbounddata.com/about.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -61,8 +75,8 @@
       <div class="container container--narrow">
         <div class="fade-in">
           <h2 class="mb-8">Who We Are</h2>
-          <p>Northbound Data is an analytics consulting firm founded by [Your Name]. We specialize in helping data teams build analytics infrastructure that actually works—reliable dbt projects, consistent metrics, and data that organizations can trust.</p>
-          <p>Before starting Northbound Data, [Your Name] spent over a decade building and leading data teams at high-growth companies. The same problems kept appearing: dbt projects that grew into unmaintainable tangles, metrics that never matched across tools, and data teams that spent more time firefighting than building.</p>
+          <p>Northbound Data is an analytics consulting firm founded by Mona. We specialize in helping data teams build analytics infrastructure that actually works—reliable dbt projects, consistent metrics, and data that organizations can trust.</p>
+          <p>Before starting Northbound Data, Mona spent over a decade building and leading data teams at high-growth companies. The same problems kept appearing: dbt projects that grew into unmaintainable tangles, metrics that never matched across tools, and data teams that spent more time firefighting than building.</p>
           <p>These problems aren't unsolvable. They're just hard to solve from the inside, when you're simultaneously trying to keep the lights on and satisfy stakeholder requests. That's where we come in—external expertise that can diagnose problems clearly and implement solutions systematically.</p>
         </div>
       </div>

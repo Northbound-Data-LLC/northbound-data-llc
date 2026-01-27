@@ -404,6 +404,56 @@ blockquote {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Nav Dropdown */
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  padding: var(--space-2) 0;
+  margin: var(--space-2) 0 0;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 200px;
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
+}
+
+.nav__dropdown:hover .nav__dropdown-menu {
+  display: block;
+}
+
+.nav__dropdown-menu li {
+  margin: 0;
+}
+
+.nav__dropdown-menu a {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.nav__dropdown-menu a:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+}
+
+/* Nav Mobile Sub-links */
+.nav__mobile-sub a {
+  padding-left: var(--space-6);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
 @media (min-width: 1024px) {
   .nav__links {
     display: flex;

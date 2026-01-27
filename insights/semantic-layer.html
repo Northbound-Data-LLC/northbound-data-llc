@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="When does a semantic layer make sense for your organization? Understanding the benefits, trade-offs, and right timing for implementation.">
   <title>The Case for a Semantic Layer | Northbound Data</title>
+  <meta property="og:title" content="The Case for a Semantic Layer | Northbound Data">
+  <meta property="og:description" content="When does a semantic layer make sense for your organization? Understanding the benefits, trade-offs, and right timing for implementation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/insights/semantic-layer.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="../services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="../services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="../services.html">Core Engagements</a></li>
+            <li><a href="../specialized.html">Specialized Services</a></li>
+            <li><a href="../retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="../services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="../specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="../retainers.html">Retainers</a></li>
         <li><a href="../case-studies.html">Case Studies</a></li>
         <li><a href="../insights.html">Insights</a></li>
         <li><a href="../about.html">About</a></li>
@@ -121,7 +135,7 @@
             <li>Established (not experimental) metric definitions</li>
             <li>Current pain around metric consistency</li>
           </ul>
-          <p>If that's you, a semantic layer is likely worth the investment. If not, you might be better served by improving your dbt project's organization and implementing strong patterns at the mart layer.</p>
+          <p>If that's you, a semantic layer is likely worth the investment. If not, you might be better served by <a href="../services.html">improving your dbt project's organization</a> and implementing strong patterns at the mart layer.</p>
           <p>The key insight is that a semantic layer is an organizational tool, not just a technical one. It succeeds when it's paired with governance processes and stakeholder buy-in. Without those, it's just another piece of infrastructure to maintain.</p>
         </div>
 
