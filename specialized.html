@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Specialized analytics services from Northbound Data. Metric alignment, query migration, semantic layer development, and data quality solutions.">
   <title>Specialized Services | Northbound Data</title>
+  <meta property="og:title" content="Specialized Services | Northbound Data">
+  <meta property="og:description" content="Specialized analytics services from Northbound Data. Metric alignment, query migration, semantic layer development, and data quality solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northbounddata.com/specialized.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -72,7 +86,8 @@
             <p class="card__description">End the "which number is right?" debates. We audit your key metrics across all systems, identify discrepancies, and implement unified definitions that everyone can trust.</p>
             <div class="card__meta">
               <strong>Typical scope:</strong> 2–4 weeks<br>
-              <strong>Outcome:</strong> Single source of truth for your core metrics
+              <strong>Outcome:</strong> Single source of truth for your core metrics<br>
+              <strong>Business impact:</strong> Finance, marketing, and operations finally reporting the same numbers
             </div>
           </div>
 
@@ -105,7 +120,8 @@
             <p class="card__description">Build a semantic layer that gives your organization consistent metrics and self-service analytics. We implement and configure your semantic layer with proper metric definitions and access patterns.</p>
             <div class="card__meta">
               <strong>Typical scope:</strong> 4–8 weeks<br>
-              <strong>Outcome:</strong> Fully configured semantic layer with governed metrics
+              <strong>Outcome:</strong> Fully configured semantic layer with governed metrics<br>
+              <strong>Business impact:</strong> Non-technical stakeholders get self-service access to trustworthy data
             </div>
           </div>
 
@@ -120,7 +136,8 @@
             <p class="card__description">Implement comprehensive testing that catches data issues before your stakeholders do. We design and implement test suites covering freshness, uniqueness, relationships, and business rules.</p>
             <div class="card__meta">
               <strong>Typical scope:</strong> 2–4 weeks<br>
-              <strong>Outcome:</strong> Robust test coverage with clear alerting and remediation paths
+              <strong>Outcome:</strong> Robust test coverage with clear alerting and remediation paths<br>
+              <strong>Business impact:</strong> Executives and board members see correct numbers the first time, every time
             </div>
           </div>
 
@@ -171,8 +188,18 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Testimonial -->
     <section class="section">
+      <div class="container container--narrow">
+        <div class="quote fade-in">
+          <p class="quote__text">"Before, our dbt project was this black box that scared everyone. Now our analysts feel confident making changes and our dashboards actually stay up. The peace of mind alone was worth it."</p>
+          <p class="quote__attribution">— Head of Analytics, Series B E-commerce Company</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--bg">
       <div class="container">
         <div class="cta fade-in">
           <div class="cta__content">

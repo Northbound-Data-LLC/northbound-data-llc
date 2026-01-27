@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Northbound Data to discuss your analytics challenges. Schedule a conversation or reach out directly.">
   <title>Contact | Northbound Data</title>
+  <meta property="og:title" content="Contact | Northbound Data">
+  <meta property="og:description" content="Contact Northbound Data to discuss your analytics challenges. Schedule a conversation or reach out directly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northbounddata.com/contact.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -63,6 +77,7 @@
           <!-- Contact Form -->
           <div class="fade-in">
             <h2 class="mb-8">Send a Message</h2>
+            <!-- TODO: Replace "your-form-id" with your actual Formspree form ID (e.g., "f/xrgj1234") -->
             <form action="https://formspree.io/f/your-form-id" method="POST">
               <div class="form-group">
                 <label class="form-label" for="name">Name</label>
@@ -89,7 +104,7 @@
             <h2 class="mb-8">Schedule a Call</h2>
             <p class="mb-8">Prefer to talk live? Schedule a 30-minute conversation at a time that works for you. We'll discuss your situation and explore whether there's a fit.</p>
 
-            <!-- Calendly Placeholder -->
+            <!-- TODO: Replace "https://calendly.com/northbounddata" with your actual Calendly URL, or embed the Calendly inline widget script -->
             <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); text-align: center; margin-bottom: var(--space-12);">
               <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">Calendly scheduling widget</p>
               <a href="https://calendly.com/northbounddata" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Open Scheduling Page →</a>
@@ -97,6 +112,7 @@
 
             <h2 class="mb-8">Email Directly</h2>
             <p class="mb-4">If you prefer email, reach out directly:</p>
+            <!-- TODO: Replace "you@northbounddata.com" with your actual email address here and in all page footers -->
             <a href="mailto:you@northbounddata.com" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-medium);">you@northbounddata.com</a>
 
             <div style="margin-top: var(--space-16);">

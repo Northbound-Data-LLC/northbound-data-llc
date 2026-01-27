@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Core analytics consulting engagements from Northbound Data. Analytics assessments, foundation rebuilds, and greenfield dbt implementations.">
   <title>Services | Northbound Data</title>
+  <meta property="og:title" content="Services | Northbound Data">
+  <meta property="og:description" content="Core analytics consulting engagements from Northbound Data. Analytics assessments, foundation rebuilds, and greenfield dbt implementations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://northbounddata.com/services.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html" class="active">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html" class="active">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -93,6 +107,7 @@
               <ul>
                 <li>Teams who know something is wrong but aren't sure what</li>
                 <li>New data leaders inheriting existing infrastructure</li>
+                <li>VPs of Finance questioning data accuracy across reports</li>
                 <li>Organizations preparing for a data transformation</li>
                 <li>Teams seeking executive buy-in for analytics investment</li>
               </ul>
@@ -127,7 +142,8 @@
               <ul>
                 <li>Organizations with existing dbt projects that have grown unwieldy</li>
                 <li>Teams experiencing metric discrepancy issues</li>
-                <li>Data teams looking to implement data governance</li>
+                <li>Finance teams tired of reconciling conflicting numbers across tools</li>
+                <li>Operations leaders who need reliable pipeline and performance data</li>
                 <li>Companies scaling their analytics capabilities</li>
               </ul>
             </div>
@@ -162,6 +178,7 @@
                 <li>Organizations adopting dbt for the first time</li>
                 <li>Teams migrating from legacy transformation tools</li>
                 <li>Companies spinning up new data warehouses</li>
+                <li>CFOs and COOs who need board-ready metrics from day one</li>
                 <li>Startups building analytics from scratch</li>
               </ul>
             </div>
@@ -188,8 +205,18 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Testimonial -->
     <section class="section section--bg">
+      <div class="container container--narrow">
+        <div class="quote fade-in">
+          <p class="quote__text">"We went from spending 60% of our time answering questions about why numbers don't match to having stakeholders who actually trust our data. The ROI was clear within the first month."</p>
+          <p class="quote__attribution">— VP of Analytics, Series C Fintech</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
       <div class="container">
         <div class="cta fade-in">
           <div class="cta__content">

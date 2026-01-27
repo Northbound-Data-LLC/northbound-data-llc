@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Case study: How Northbound Data helped a Series C fintech company unify metrics across their fragmented BI landscape.">
   <title>Fintech Case Study | Northbound Data</title>
+  <meta property="og:title" content="Fintech Case Study | Northbound Data">
+  <meta property="og:description" content="How Northbound Data helped a Series C fintech company unify metrics across their fragmented BI landscape.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://northbounddata.com/case-study-1.html">
+  <meta name="theme-color" content="#00A896">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +26,14 @@
         Northbound Data
       </a>
       <ul class="nav__links">
-        <li><a href="services.html">Services</a></li>
+        <li class="nav__dropdown">
+          <a href="services.html">Services</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services.html">Core Engagements</a></li>
+            <li><a href="specialized.html">Specialized Services</a></li>
+            <li><a href="retainers.html">Retainers</a></li>
+          </ul>
+        </li>
         <li><a href="case-studies.html" class="active">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,6 +48,8 @@
     <div class="nav__mobile">
       <ul class="nav__mobile-links">
         <li><a href="services.html">Services</a></li>
+        <li class="nav__mobile-sub"><a href="specialized.html">Specialized Services</a></li>
+        <li class="nav__mobile-sub"><a href="retainers.html">Retainers</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="about.html">About</a></li>
@@ -86,9 +100,9 @@
           <p>A Series C payments infrastructure company processing over $2B in annual transaction volume. Their data team of 8 supported product, finance, operations, and executive stakeholders across a complex multi-product platform.</p>
 
           <h2>The Problem</h2>
-          <p>After three years of rapid growth and multiple acquisitions, the company's analytics ecosystem had become a patchwork of conflicting definitions and siloed tools. The symptoms were unmistakable:</p>
+          <p>After three years of rapid growth and multiple acquisitions, the company's analytics ecosystem had become a patchwork of conflicting definitions and siloed tools. The CFO's team was preparing for a potential Series D, and investor due diligence required numbers that could withstand scrutiny. The symptoms were unmistakable:</p>
           <ul>
-            <li>Finance reported monthly revenue of $8.2M while the product team showed $7.9M—and both had documentation proving their number was correct</li>
+            <li>Finance reported monthly revenue of $8.2M while the product team showed $7.9M—and both had documentation proving their number was correct. The CFO couldn't confidently present either figure to the board.</li>
             <li>Three different Looker dashboards, each with its own "revenue" calculation, were used by different executives</li>
             <li>The dbt project had grown to 400+ models with minimal testing and documentation</li>
             <li>Ad-hoc requests took 2-3 weeks because analysts spent more time reconciling numbers than answering questions</li>
@@ -125,6 +139,9 @@
             <li>Set up monitoring and alerting for data quality issues</li>
           </ul>
 
+          <h2>Key Challenge</h2>
+          <p>The hardest part wasn't the technical rebuild—it was getting cross-functional alignment on metric definitions. Finance, Product, and Sales each had legitimate reasons for their different revenue calculations. We facilitated working sessions that surfaced the business logic behind each definition and built a framework where one canonical definition served as the source of truth, with clearly documented variants for specific use cases. Without that organizational alignment, the technical work wouldn't have stuck.</p>
+
           <h2>The Outcome</h2>
           <p>Within the first month after go-live:</p>
           <ul>
@@ -139,6 +156,7 @@
             <footer>— VP of Analytics</footer>
           </blockquote>
 
+          <p>The client estimated the engagement paid for itself within the first quarter through reduced analyst time on metric reconciliation and faster decision-making across Finance and Product.</p>
           <p>The company continues with a 20-hour monthly retainer for ongoing development and support as they expand into new product lines.</p>
         </div>
 
