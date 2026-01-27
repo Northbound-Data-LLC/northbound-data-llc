@@ -4,27 +4,27 @@
 
 /* ---------- CSS Variables (Design Tokens) ---------- */
 :root {
-  /* Colors - Dark Mode Palette */
-  --color-bg-primary: #0d1117;
-  --color-bg-secondary: #161b22;
-  --color-bg-tertiary: #21262d;
-  --color-bg-card: #1c2128;
+  /* Colors - Light Mode Palette */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f6f8fa;
+  --color-bg-tertiary: #eef1f5;
+  --color-bg-card: #ffffff;
 
-  --color-text-primary: #f0f6fc;
-  --color-text-secondary: #8b949e;
-  --color-text-muted: #6e7681;
+  --color-text-primary: #24292f;
+  --color-text-secondary: #57606a;
+  --color-text-muted: #8b949e;
 
   /* Teal Trust Palette */
-  --color-teal: #00A896;           /* Medium teal - primary accent */
-  --color-teal-hover: #02C39A;     /* Bright teal - hover states */
-  --color-teal-dark: #028090;      /* Dark teal - secondary accent */
+  --color-teal: #00897B;           /* Medium teal - primary accent */
+  --color-teal-hover: #00A896;     /* Bright teal - hover states */
+  --color-teal-dark: #00695C;      /* Dark teal - secondary accent */
 
-  --color-accent: #028090;         /* Dark teal as secondary accent */
-  --color-accent-hover: #00A896;   /* Medium teal for hover */
-  --color-accent-subtle: rgba(0, 168, 150, 0.15);
+  --color-accent: #00695C;         /* Dark teal as secondary accent */
+  --color-accent-hover: #00897B;   /* Medium teal for hover */
+  --color-accent-subtle: rgba(0, 137, 123, 0.1);
 
-  --color-border: #30363d;
-  --color-border-subtle: #21262d;
+  --color-border: #d1d9e0;
+  --color-border-subtle: #e8ecf0;
 
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -76,10 +76,10 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -279,7 +279,7 @@ blockquote {
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
-  background: rgba(13, 17, 23, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -497,8 +497,8 @@ blockquote {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(48, 54, 61, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(48, 54, 61, 0.3) 1px, transparent 1px);
+    linear-gradient(rgba(209, 217, 224, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(209, 217, 224, 0.5) 1px, transparent 1px);
   background-size: 60px 60px;
   opacity: 0.5;
   pointer-events: none;
@@ -580,12 +580,12 @@ blockquote {
 
 .btn--primary {
   background: var(--color-teal);
-  color: var(--color-bg-primary);
+  color: #ffffff;
 }
 
 .btn--primary:hover {
   background: var(--color-teal-hover);
-  color: var(--color-bg-primary);
+  color: #ffffff;
 }
 
 .btn--secondary {
@@ -700,7 +700,7 @@ blockquote {
   top: calc(-1 * var(--space-3));
   left: var(--space-6);
   background: var(--color-teal);
-  color: var(--color-bg-primary);
+  color: #ffffff;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   padding: var(--space-1) var(--space-3);
@@ -796,7 +796,7 @@ blockquote {
 }
 
 .case-study-card__industry {
-  background: var(--color-bg-primary);
+  background: var(--color-bg-secondary);
   color: var(--color-teal);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
@@ -1480,7 +1480,7 @@ blockquote {
   top: -100%;
   left: 0;
   background: var(--color-teal);
-  color: var(--color-bg-primary);
+  color: #ffffff;
   padding: var(--space-4);
   z-index: 1000;
 }
