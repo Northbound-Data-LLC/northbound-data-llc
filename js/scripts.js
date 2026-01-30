@@ -1,6 +1,6 @@
 /**
  * Northbound Data - Main JavaScript
- * Handles mobile navigation and scroll animations
+ * Handles mobile navigation, scroll animations, and page load orchestration
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,7 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Animated Stat Counters
   initStatCounters();
+
+  // Page load orchestration
+  initPageLoad();
 });
+
+/**
+ * Page Load Orchestration
+ * Triggers hero elements with staggered timing on load
+ */
+function initPageLoad() {
+  // Small delay to ensure paint, then trigger above-fold fade-ins
+  requestAnimationFrame(function() {
+    setTimeout(function() {
+      var heroFadeIns = document.querySelectorAll('.hero .fade-in, .hero.fade-in, .page-header .fade-in, .article__header.fade-in');
+      heroFadeIns.forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 100);
+  });
+}
 
 /**
  * Mobile Navigation
@@ -72,7 +91,7 @@ function initScrollAnimations() {
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
+    rootMargin: '0px 0px -60px 0px',
     threshold: 0.1
   };
 
@@ -80,7 +99,6 @@ function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Optional: unobserve after animation
         observer.unobserve(entry.target);
       }
     });
@@ -148,13 +166,13 @@ function initStatCounters() {
 function animateCounter(el) {
   var target = parseInt(el.getAttribute('data-target'), 10);
   var suffix = el.getAttribute('data-suffix') || '';
-  var duration = 1500;
+  var duration = 1800;
   var start = performance.now();
 
   function update(now) {
     var elapsed = now - start;
     var progress = Math.min(elapsed / duration, 1);
-    // Ease-out cubic
+    // Ease-out cubic for smooth deceleration
     var eased = 1 - Math.pow(1 - progress, 3);
     var current = Math.round(eased * target);
     el.textContent = current + suffix;
