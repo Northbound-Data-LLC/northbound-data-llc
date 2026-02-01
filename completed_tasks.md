@@ -109,3 +109,38 @@ Transformed the site into a premium, executive-facing consulting website with a 
 - 16/16 pages confirmed with #C4A265 theme-color
 - 0 references to old Inter font import or #00A896 theme-color remaining
 - 0 references to --color-teal remaining
+
+## Consolidate Services Page & Fix Nav
+
+### Summary
+The Services dropdown submenu wasn't clickable. Instead of fixing the dropdown interaction, simplified the architecture: consolidated all services onto one page and removed the dropdown nav entirely.
+
+### Changes Made
+
+**1. Merged specialized services into `services.html`**
+- Added all 6 specialized service cards (Metric Alignment Sprint, Query Ecosystem Migration, Semantic Layer Development, Data Quality & Testing Overhaul, Data Profiling & Documentation, CI/CD Pipeline Implementation) as a new "Specialized Services" section below the core engagements
+- Added a section header with "Targeted Sprints" tag
+- Removed the old cross-link section ("Need something more targeted?" / "Looking for ongoing support?") since everything is now on one page
+- Updated page title/subtitle and OG description to reflect the consolidated page
+
+**2. Simplified nav across all 16 HTML files**
+- Replaced `<li class="nav__dropdown">` (with nested `<ul class="nav__dropdown-menu">`) with a simple `<li><a href="services.html">Services</a></li>`
+- Removed mobile nav sub-links (`nav__mobile-sub`) for Specialized Services and Retainers
+- Preserved `class="active"` on services.html
+- Preserved `../` relative paths for 4 files in insights/ subdirectory
+
+**3. Simplified footer across all 16 HTML files**
+- Replaced 3-item footer Services list (Core Engagements, Specialized Services, Retainers) with a single "Services" link
+
+**4. Cleaned up CSS (`css/styles.css`)**
+- Removed all dropdown-related styles: `.nav__dropdown`, `.nav__dropdown-menu`, `.nav__dropdown:hover`, `.nav__dropdown-menu a`, `.nav__dropdown-menu a:hover`
+- Removed `.nav__mobile-sub` styles
+
+### Files Modified
+- **services.html**: Page header, content merge, cross-link removal, nav/footer
+- **All 16 HTML files**: Nav and footer simplification
+- **css/styles.css**: Removed ~40 lines of dropdown/sub-link CSS
+
+### Notes
+- `specialized.html` and `retainers.html` still exist as files but are no longer linked from navigation or footer
+- The existing design aesthetic (dark editorial luxury, brass accents, Playfair Display) is fully preserved
